@@ -1,0 +1,24 @@
+version: '3'
+services:
+  postgres:
+    image: 'postgres:10.3-alpine'
+    # volumes: 
+    #   - 'postgres:/var/lib/postgresql/data'
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+      - POSTGRES_DB=db-container
+  api:
+    depends_on:
+      - 'postgres'
+    build: '.'
+    command: npm run start
+    ports: 
+      - '3000:3000'
+    volumes:
+      - '.:/usr/app'
+    environment:
+      - DATABASE_URL=postgres://postgres:password@postgres:5432
+
+# volumes:
+  # postgres:
