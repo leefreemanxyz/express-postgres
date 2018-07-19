@@ -2,9 +2,9 @@ FROM node:10.1.0-alpine
 
 WORKDIR /usr/app
 
-RUN npm install -g nodemon
+RUN npm install -g nodemon @babel/node @babel/core knex
 
 COPY package.json .
-RUN npm install --quiet
+RUN npm install
 COPY . .
-CMD ["nodemon", "src/"]
+CMD ["nodemon", "--exec", "babel-node", "src/"]
