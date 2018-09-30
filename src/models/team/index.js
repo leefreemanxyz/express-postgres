@@ -1,5 +1,5 @@
 const { Model } = require('objection')
-import League from './league'
+import League from '../league'
 
 export default class Team extends Model {
 	static get tableName() {

@@ -1,4 +1,4 @@
-import League from '../models/league'
+import League from '../../models/league'
 
 export default class LeagueController {
 	static getAll = async () => {

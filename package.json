@@ -1,28 +1,40 @@
 {
-  "name": "express-sequelize-postgres",
+  "name": "express-postgres",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon --exec babel-node src/",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest --watch",
     "migrate": "knex migrate:latest",
     "seed": "knex seed:run"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/node": "^7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/preset-env": "^7.1.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.16.3",
-    "knex": "^0.15.1",
+    "knex": "^0.15.2",
     "morgan": "^1.9.0",
     "nodemon": "^1.17.5",
     "objection": "^1.1.10",
     "pg": "^7.4.3",
-    "pg-hstore": "^2.3.2",
-    "@babel/core": "^7.0.0-beta.53",
-    "@babel/node": "^7.0.0-beta.53",
-    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.53",
-    "@babel/preset-env": "^7.0.0-beta.53"
+    "pg-hstore": "^2.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^7.0.0-bridge.0",
+    "babel-jest": "^23.6.0",
+    "eslint": "^5.6.1",
+    "eslint-config-prettier": "^3.1.0",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-prettier": "^2.7.0",
+    "jest": "^23.6.0"
+  },
+  "transform": {
+    "^.+\\.jsx?$": "babel-jest"
   }
-  
 }
